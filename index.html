@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="home_page_title">Valid Agro Products LTD - হোম</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for hero section */
+        .hero-section {
+            background-image: url('https://placehold.co/1200x600/F0F0F0/888888?text=Hero+Image+of+Field'); /* Replace with actual image */
+            background-size: cover;
+            background-position: center;
+            height: 600px; /* Adjust as needed */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- হেডার -->
+    <header class="bg-white shadow-md p-4 sticky top-0 z-50 rounded-b-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/228B22/FFFFFF?text=Logo" alt="Valid Agro Products LTD Logo" class="w-10 h-10 rounded-full">
+                <a href="index.html" class="text-green-800 text-2xl font-bold" data-lang-key="company_name_header">Valid Agro Products LTD</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- ভাষা পরিবর্তন অপশন -->
+                <div class="relative inline-block text-left">
+                    <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-500" id="language-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <span id="current-language">বাংলা</span>
+                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="language-menu-button" tabindex="-1" id="language-menu">
+                        <div class="py-1" role="none">
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1" id="lang-bn" data-lang-code="bn">বাংলা</a>
+                            <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1" id="lang-en" data-lang-code="en">English</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- মোবাইল মেনু টগল বাটন -->
+                <button id="menu-toggle" class="lg:hidden text-gray-700 focus:outline-none" aria-expanded="false">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- ডেস্কটপ নেভিগেশন -->
+            <ul id="main-nav" class="hidden lg:flex space-x-6 text-lg font-medium">
+                <li><a href="index.html" class="text-green-700 hover:text-green-900 transition duration-300 ease-in-out py-2 px-3 rounded-md bg-green-50" data-lang-key="nav_home">হোম</a></li>
+                <li class="relative group">
+                    <a href="#" class="text-gray-700 hover:text-green-700 transition duration-300 ease-in-out py-2 px-3 rounded-md" data-lang-key="nav_products">পণ্য <i class="fas fa-caret-down ml-1"></i></a>
+                    <ul class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 py-2 z-10">
+                        <li><a href="products.html#seeds" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_products_seeds">বীজ</a></li>
+                        <li><a href="products.html#fertilizers" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_products_fertilizers">সার</a></li>
+                        <li><a href="products.html#pesticides" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_products_pesticides">কীটনাশক</a></li>
+                    </ul>
+                </li>
+                <li><a href="manufacturing.html" class="text-gray-700 hover:text-green-700 transition duration-300 ease-in-out py-2 px-3 rounded-md" data-lang-key="nav_manufacturing">উৎপাদন কেন্দ্র</a></li>
+                <li><a href="news.html" class="text-gray-700 hover:text-green-700 transition duration-300 ease-in-out py-2 px-3 rounded-md" data-lang-key="nav_news_media">খবর ও মিডিয়া</a></li>
+                <li><a href="career.html" class="text-gray-700 hover:text-green-700 transition duration-300 ease-in-out py-2 px-3 rounded-md" data-lang-key="nav_career">ক্যারিয়ার</a></li>
+                <li><a href="contact.html" class="text-gray-700 hover:text-green-700 transition duration-300 ease-in-out py-2 px-3 rounded-md" data-lang-key="nav_contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+        <!-- মোবাইল মেনু (জাভাস্ক্রিপ্ট দ্বারা টoggle করা হবে) -->
+        <ul id="mobile-nav" class="lg:hidden hidden bg-white shadow-lg rounded-b-lg py-2 mt-2">
+            <li><a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_home">হোম</a></li>
+            <li>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" id="mobile-products-toggle" data-lang-key="nav_products">পণ্য <i class="fas fa-caret-down ml-1"></i></a>
+                <ul id="mobile-products-submenu" class="hidden pl-8">
+                    <li><a href="products.html#seeds" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_products_seeds">বীজ</a></li>
+                    <li><a href="products.html#fertilizers" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_products_fertilizers">সার</a></li>
+                    <li><a href="products.html#pesticides" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_products_pesticides">কীটনাশক</a></li>
+                </ul>
+            </li>
+            <li><a href="manufacturing.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_manufacturing">উৎপাদন কেন্দ্র</a></li>
+            <li><a href="news.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_news_media">খবর ও মিডিয়া</a></li>
+            <li><a href="career.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_career">ক্যারিয়ার</a></li>
+            <li><a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md" data-lang-key="nav_contact">যোগাযোগ</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <!-- হিরো সেকশন -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="z-10 px-4">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg" data-lang-key="hero_title">Valid Agro Products LTD</h1>
+                <p class="text-xl md:text-2xl font-light mb-8 drop-shadow-md" data-lang-key="hero_subtitle">সবুজ ভবিষ্যতের জন্য আপনার সঙ্গী</p>
+                <a href="products.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-lang-key="hero_button">আমাদের পণ্য দেখুন</a>
+            </div>
+        </section>
+
+        <!-- কোম্পানি সম্পর্কে -->
+        <section class="container mx-auto my-16 px-4">
+            <h2 class="text-4xl font-bold text-center text-green-800 mb-10" data-lang-key="about_us_title">আমাদের সম্পর্কে</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+                    <p data-lang-key="about_us_paragraph_1">Valid Agro Products LTD কৃষিক্ষেত্রে উদ্ভাবনী সমাধান প্রদানে প্রতিশ্রুতিবদ্ধ। আমরা উন্নত মানের বীজ, সার এবং কীটনাশক সরবরাহ করে কৃষকদের উৎপাদনশীলতা এবং ফসলের মান বৃদ্ধিতে সহায়তা করি।</p>
+                    <p data-lang-key="about_us_paragraph_2">আমাদের লক্ষ্য হল পরিবেশের ভারসাম্য বজায় রেখে টেকসই কৃষি অনুশীলনকে উৎসাহিত করা। আমরা গবেষণা ও উন্নয়নে বিনিয়োগ করি যাতে আমাদের পণ্যগুলো কৃষকদের চাহিদা মেটাতে এবং তাদের সাফল্যের অংশীদার হতে পারে।</p>
+                    <p data-lang-key="about_us_paragraph_3">আমাদের উৎপাদন কেন্দ্রগুলো আধুনিক প্রযুক্তি এবং কঠোর মান নিয়ন্ত্রণ প্রক্রিয়া অনুসরণ করে, যা আমাদের পণ্যের গুণগত মান নিশ্চিত করে।</p>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/D0F0C0/000000?text=Farm+Landscape" alt="Farm Landscape" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- আমাদের পণ্য -->
+        <section class="bg-green-50 py-16 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-green-800 mb-10" data-lang-key="our_products_title">আমাদের পণ্য</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- পণ্য কার্ড 1 -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-2">
+                        <i class="fas fa-seedling text-green-600 text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3" data-lang-key="product_card_seeds_title">বীজ</h3>
+                        <p class="text-gray-600 mb-4" data-lang-key="product_card_seeds_desc">উচ্চ ফলনশীল এবং রোগ প্রতিরোধী বিভিন্ন ধরণের বীজ।</p>
+                        <a href="products.html#seeds" class="text-green-700 hover:text-green-900 font-medium" data-lang-key="product_card_view_details">বিস্তারিত দেখুন <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                    </div>
+                    <!-- পণ্য কার্ড 2 -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-2">
+                        <i class="fas fa-flask text-green-600 text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3" data-lang-key="product_card_fertilizers_title">সার</h3>
+                        <p class="text-gray-600 mb-4" data-lang-key="product_card_fertilizers_desc">মাটির উর্বরতা বৃদ্ধিতে কার্যকর বিভিন্ন জৈব ও রাসায়নিক সার।</p>
+                        <a href="products.html#fertilizers" class="text-green-700 hover:text-green-900 font-medium" data-lang-key="product_card_view_details">বিস্তারিত দেখুন <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                    </div>
+                    <!-- পণ্য কার্ড 3 -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-2">
+                        <i class="fas fa-bug text-green-600 text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3" data-lang-key="product_card_pesticides_title">কীটনাশক</h3>
+                        <p class="text-gray-600 mb-4" data-lang-key="product_card_pesticides_desc">ফসলের ক্ষতিকারক পোকামাকড় এবং রোগ নিয়ন্ত্রণে কার্যকর সমাধান।</p>
+                        <a href="products.html#pesticides" class="text-green-700 hover:text-green-900 font-medium" data-lang-key="product_card_view_details">বিস্তারিত দেখুন <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- উৎপাদন কেন্দ্রের ছবি -->
+        <section class="container mx-auto my-16 px-4">
+            <h2 class="text-4xl font-bold text-center text-green-800 mb-10" data-lang-key="manufacturing_plants_title">আমাদের উৎপাদন কেন্দ্র</h2>
+            <div class="relative w-full rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/1000x500/A0E0A0/000000?text=Manufacturing+Plant+Image" alt="Manufacturing Plant" class="w-full h-auto object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center p-4">
+                    <p class="text-white text-3xl font-semibold text-center drop-shadow-lg" data-lang-key="manufacturing_plant_caption">আধুনিক প্রযুক্তিতে সমৃদ্ধ আমাদের উৎপাদন কেন্দ্র</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="manufacturing.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105" data-lang-key="learn_more_button">আরো জানুন</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ফুটার -->
+    <footer class="bg-gray-800 text-white py-10 rounded-t-lg">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-green-400" data-lang-key="company_name_footer">Valid Agro Products LTD</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-lang-key="footer_slogan">কৃষিক্ষেত্রে উদ্ভাবনী সমাধান প্রদানে প্রতিশ্রুতিবদ্ধ।</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-green-400" data-lang-key="footer_quick_links_title">গুরুত্বপূর্ণ লিংক</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="products.html" class="hover:text-green-300 transition duration-300" data-lang-key="nav_products">আমাদের পণ্য</a></li>
+                    <li><a href="manufacturing.html" class="hover:text-green-300 transition duration-300" data-lang-key="nav_manufacturing">উৎপাদন কেন্দ্র</a></li>
+                    <li><a href="career.html" class="hover:text-green-300 transition duration-300" data-lang-key="nav_career">ক্যারিয়ার</a></li>
+                    <li><a href="news.html" class="hover:text-green-300 transition duration-300" data-lang-key="nav_news_media">খবর ও মিডিয়া</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-green-400" data-lang-key="footer_contact_title">যোগাযোগ</h3>
+                <p class="text-gray-400 mb-2" data-lang-key="footer_address"><i class="fas fa-map-marker-alt mr-2"></i> ঠিকানা: নাদুরপুকুর, শাহজাহানপুর, বগুড়া।</p>
+                <p class="text-gray-400 mb-2" data-lang-key="footer_phone"><i class="fas fa-phone mr-2"></i> ফোন: +880 1713-736920</p>
+                <p class="text-gray-400 mb-2" data-lang-key="footer_email"><i class="fas fa-envelope mr-2"></i> ইমেল: validagrolimited@gmail.com</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-green-300 transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-green-300 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-green-300 transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-green-300 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-700" data-lang-key="footer_copyright">
+            &copy; <span id="current-year"></span> Valid Agro Products LTD. সর্বস্বত্ব সংরক্ষিত।
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

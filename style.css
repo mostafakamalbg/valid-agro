@@ -1,0 +1,36 @@
+/* style.css */
+
+/* বেসিক রিসেট এবং বডি স্টাইল */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ফন্ট ইন্টার এর জন্য Tailwind CSS এ সংজ্ঞায়িত */
+}
+
+/* অন্যান্য কাস্টম স্টাইল যদি প্রয়োজন হয় */
+/* উদাহরণস্বরূপ, যদি Tailwind এর বাইরে কোনো কাস্টম ক্লাস থাকে */
+
+/* মোবাইল ফার্স্ট ডিজাইন */
+@media (max-width: 1023px) { /* lg ব্রেকপয়েন্টের নিচে */
+    /* মোবাইল মেনু টগল হওয়ার সময় */
+    #mobile-nav.hidden {
+        display: none;
+    }
+    #mobile-nav:not(.hidden) {
+        display: block;
+    }
+    /* মোবাইল প্রোডাক্টস সাবমেনু টগল হওয়ার সময় */
+    #mobile-products-submenu.hidden {
+        display: none;
+    }
+    #mobile-products-submenu:not(.hidden) {
+        display: block;
+    }
+}
+
+/* ডেস্কটপ মেনুর জন্য সাবমেনু স্টাইল */
+.group:hover .group-hover\:block {
+    display: block;
+}
+
